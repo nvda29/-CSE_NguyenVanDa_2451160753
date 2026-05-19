@@ -83,9 +83,97 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== PORTFOLIO SECTION ===== -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title">My Portfolio</h2>
+                <div class="portfolio-grid">
+                    <a href="#lightbox-1" class="portfolio-item" data-category="web">
+                        <img src="https://picsum.photos/400/300?random=1" alt="E-Commerce Website">
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Website</h3>
+                            <p>React + Node.js</p>
+                        </div>
+                    </a>
+                    <a href="#lightbox-2" class="portfolio-item" data-category="mobile">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Fitness App">
+                        <div class="portfolio-overlay">
+                            <h3>Fitness App</h3>
+                            <p>React Native</p>
+                        </div>
+                    </a>
+                    <a href="#lightbox-3" class="portfolio-item" data-category="web">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Blog Platform">
+                        <div class="portfolio-overlay">
+                            <h3>Blog Platform</h3>
+                            <p>Vue.js + Firebase</p>
+                        </div>
+                    </a>
+                    <a href="#lightbox-4" class="portfolio-item" data-category="design">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Brand Identity">
+                        <div class="portfolio-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Figma + Illustrator</p>
+                        </div>
+                    </a>
+                    <a href="#lightbox-5" class="portfolio-item" data-category="web">
+                        <img src="https://picsum.photos/400/300?random=5" alt="Task Manager">
+                        <div class="portfolio-overlay">
+                            <h3>Task Manager</h3>
+                            <p>Angular + MongoDB</p>
+                        </div>
+                    </a>
+                    <a href="#lightbox-6" class="portfolio-item" data-category="mobile">
+                        <img src="https://picsum.photos/400/300?random=6" alt="Food Delivery">
+                        <div class="portfolio-overlay">
+                            <h3>Food Delivery</h3>
+                            <p>Flutter + Dart</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- BƯỚC 5: Dán script Ở ĐÂY — sau </main>, trước </body> -->
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox-1" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=1" alt="E-Commerce Website">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+    <div id="lightbox-2" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=2" alt="Fitness App">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+    <div id="lightbox-3" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=3" alt="Blog Platform">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+    <div id="lightbox-4" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=4" alt="Brand Identity">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+    <div id="lightbox-5" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=5" alt="Task Manager">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+    <div id="lightbox-6" class="lightbox">
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/800/600?random=6" alt="Food Delivery">
+            <a href="#!" class="lightbox-close">&times;</a>
+        </div>
+    </div>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
