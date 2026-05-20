@@ -1,6 +1,5 @@
 /**
  * BTTH03 — Bài 1: Quản lý sinh viên
- * Bạn bổ sung validation (bài về nhà) trong handleSubmit / validateForm.
  */
 
 const STORAGE_KEY = "btth03_students_v1";
@@ -66,6 +65,132 @@ function resetForm() {
     fInternalId.value = "";
     editingId = null;
     modalTitle.textContent = "Thêm sinh viên";
+    clearFieldErrors();
+}
+
+const fieldErrors = {
+    studentId: document.querySelector("#err-studentId"),
+    fullName: document.querySelector("#err-fullName"),
+    dob: document.querySelector("#err-dob"),
+    className: document.querySelector("#err-className"),
+    gpa: document.querySelector("#err-gpa"),
+    email: document.querySelector("#err-email"),
+};
+
+const fieldInputs = {
+    studentId: fStudentId,
+    fullName: fFullName,
+    dob: fDob,
+    className: fClassName,
+    gpa: fGpa,
+    email: fEmail,
+};
+
+function clearFieldErrors() {
+    Object.keys(fieldErrors).forEach((key) => {
+        fieldErrors[key].textContent = "";
+        fieldInputs[key].classList.remove("input-invalid");
+    });
+}
+
+function setFieldError(field, message) {
+    fieldErrors[field].textContent = message;
+    fieldInputs[field].classList.add("input-invalid");
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidStudentId(id) {
+    return /^\d{10}$/.test(id);
+}
+
+function isValidDob(dob) {
+    if (!dob) return false;
+    const d = new Date(dob + "T00:00:00");
+    if (Number.isNaN(d.getTime())) return false;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return d <= today;
+}
+
+function isDuplicateStudentId(studentId) {
+    return students.some(
+        (st) => st.studentId === studentId && st.id !== editingId
+    );
+}
+
+function validateForm() {
+    clearFieldErrors();
+    let valid = true;
+
+    const studentId = fStudentId.value.trim();
+    const fullName = fFullName.value.trim();
+    const dob = fDob.value;
+    const className = fClassName.value.trim();
+    const gpaRaw = fGpa.value.trim();
+    const email = fEmail.value.trim();
+
+    if (!studentId) {
+        setFieldError("studentId", "Mã sinh viên không được để trống.");
+        valid = false;
+    } else if (!isValidStudentId(studentId)) {
+        setFieldError("studentId", "Mã SV phải đúng 10 chữ số (VD: 2451160753).");
+        valid = false;
+    } else if (isDuplicateStudentId(studentId)) {
+        setFieldError("studentId", "Mã sinh viên đã tồn tại.");
+        valid = false;
+    }
+
+    if (!fullName) {
+        setFieldError("fullName", "Họ và tên không được để trống.");
+        valid = false;
+    } else if (fullName.length < 2) {
+        setFieldError("fullName", "Họ và tên phải có ít nhất 2 ký tự.");
+        valid = false;
+    }
+
+    if (!dob) {
+        setFieldError("dob", "Ngày sinh không được để trống.");
+        valid = false;
+    } else if (!isValidDob(dob)) {
+        setFieldError("dob", "Ngày sinh không hợp lệ hoặc không được ở tương lai.");
+        valid = false;
+    }
+
+    if (!className) {
+        setFieldError("className", "Lớp học không được để trống.");
+        valid = false;
+    }
+
+    if (!gpaRaw) {
+        setFieldError("gpa", "Điểm trung bình không được để trống.");
+        valid = false;
+    } else {
+        const gpa = parseFloat(gpaRaw);
+        if (Number.isNaN(gpa)) {
+            setFieldError("gpa", "Điểm phải là số.");
+            valid = false;
+        } else if (gpa < 0 || gpa > 10) {
+            setFieldError("gpa", "Điểm phải từ 0 đến 10.");
+            valid = false;
+        }
+    }
+
+    if (!email) {
+        setFieldError("email", "Email không được để trống.");
+        valid = false;
+    } else if (!isValidEmail(email)) {
+        setFieldError("email", "Email không đúng định dạng.");
+        valid = false;
+    }
+
+    if (!valid) {
+        showMessage("Vui lòng sửa các lỗi trong form.", "error");
+    }
+
+    return valid;
 }
 
 function updateStatistics() {
@@ -140,6 +265,7 @@ function handleEdit(id) {
     if (!st) return;
     editingId = id;
     modalTitle.textContent = "Cập nhật sinh viên";
+    clearFieldErrors();
     fillFormFromStudent(st);
     showMessage("");
     openModal();
@@ -168,18 +294,9 @@ function readFormObject() {
     };
 }
 
-/** TODO bài về nhà: thêm validateForm() — email, điểm, ngày, mã SV, độ dài... */
-function validateFormBasic() {
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return false;
-    }
-    return true;
-}
-
 function handleSubmit(e) {
     e.preventDefault();
-    if (!validateFormBasic()) return;
+    if (!validateForm()) return;
 
     const data = readFormObject();
 
@@ -230,6 +347,16 @@ modalOverlay.addEventListener("click", (e) => {
 });
 
 form.addEventListener("submit", handleSubmit);
+
+[fStudentId, fFullName, fDob, fClassName, fGpa, fEmail].forEach((input) => {
+    input.addEventListener("input", () => {
+        const key = input.id.replace("f-", "");
+        if (fieldErrors[key] && fieldErrors[key].textContent) {
+            fieldErrors[key].textContent = "";
+            input.classList.remove("input-invalid");
+        }
+    });
+});
 
 // --- Khởi động ---
 document.addEventListener("DOMContentLoaded", () => {

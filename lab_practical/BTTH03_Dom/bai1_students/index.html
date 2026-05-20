@@ -45,29 +45,35 @@
             </div>
             <form id="student-form" novalidate>
                 <input type="hidden" id="f-internal-id" value="">
-                <div class="form-group">
+                <div class="form-group" data-field="studentId">
                     <label for="f-studentId">Mã sinh viên <span class="required">*</span></label>
-                    <input type="text" id="f-studentId" name="studentId" required>
+                    <input type="text" id="f-studentId" name="studentId" maxlength="10" placeholder="VD: 2451160753">
+                    <span class="field-error" id="err-studentId" role="alert"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-field="fullName">
                     <label for="f-fullName">Họ và tên <span class="required">*</span></label>
-                    <input type="text" id="f-fullName" name="fullName" required>
+                    <input type="text" id="f-fullName" name="fullName" maxlength="100">
+                    <span class="field-error" id="err-fullName" role="alert"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-field="dob">
                     <label for="f-dob">Ngày sinh <span class="required">*</span></label>
-                    <input type="date" id="f-dob" name="dob" required>
+                    <input type="date" id="f-dob" name="dob">
+                    <span class="field-error" id="err-dob" role="alert"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-field="className">
                     <label for="f-className">Lớp học <span class="required">*</span></label>
-                    <input type="text" id="f-className" name="className" required>
+                    <input type="text" id="f-className" name="className" maxlength="20" placeholder="VD: CSE-K66">
+                    <span class="field-error" id="err-className" role="alert"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-field="gpa">
                     <label for="f-gpa">Điểm trung bình <span class="required">*</span></label>
-                    <input type="number" id="f-gpa" name="gpa" step="0.01" min="0" max="10" required>
+                    <input type="number" id="f-gpa" name="gpa" step="0.01" min="0" max="10">
+                    <span class="field-error" id="err-gpa" role="alert"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-field="email">
                     <label for="f-email">Email <span class="required">*</span></label>
-                    <input type="email" id="f-email" name="email" required>
+                    <input type="email" id="f-email" name="email" maxlength="100">
+                    <span class="field-error" id="err-email" role="alert"></span>
                 </div>
                 <div class="modal-actions">
                     <button type="button" id="btn-cancel" class="btn btn-secondary">Hủy</button>
