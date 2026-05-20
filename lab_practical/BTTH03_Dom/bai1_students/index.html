@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTTH03 — Bài 1: Quản lý sinh viên</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1 id="page-title">Quản lý sinh viên</h1>
+        <button type="button" id="btn-open-form" class="btn btn-primary">Thêm sinh viên</button>
+    </header>
+
+    <section class="stats" aria-label="Thống kê">
+        <p>Tổng số sinh viên: <strong id="stat-count">0</strong></p>
+        <p>Điểm trung bình cả lớp: <strong id="stat-avg">—</strong></p>
+    </section>
+
+    <div id="message-area" class="message-area" role="status" aria-live="polite"></div>
+
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Mã SV</th>
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Lớp</th>
+                    <th>ĐTB</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="student-tbody"></tbody>
+        </table>
+    </div>
+
+    <!-- Popup / modal -->
+    <div id="modal-overlay" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm sinh viên</h2>
+                <button type="button" id="btn-close-modal" class="btn-icon" aria-label="Đóng">&times;</button>
+            </div>
+            <form id="student-form" novalidate>
+                <input type="hidden" id="f-internal-id" value="">
+                <div class="form-group">
+                    <label for="f-studentId">Mã sinh viên <span class="required">*</span></label>
+                    <input type="text" id="f-studentId" name="studentId" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-fullName">Họ và tên <span class="required">*</span></label>
+                    <input type="text" id="f-fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-dob">Ngày sinh <span class="required">*</span></label>
+                    <input type="date" id="f-dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-className">Lớp học <span class="required">*</span></label>
+                    <input type="text" id="f-className" name="className" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-gpa">Điểm trung bình <span class="required">*</span></label>
+                    <input type="number" id="f-gpa" name="gpa" step="0.01" min="0" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-email">Email <span class="required">*</span></label>
+                    <input type="email" id="f-email" name="email" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="btn btn-secondary">Hủy</button>
+                    <button type="submit" id="btn-save" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
