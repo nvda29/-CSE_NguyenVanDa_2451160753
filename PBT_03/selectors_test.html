@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Test - A2</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: sans-serif; padding: 20px; }
+        h1.sel-h1 { background: #fef3c7; }
+        .price.sel-price { background: #dbeafe; }
+        #app header.sel-desc { outline: 2px dashed #f97316; }
+        nav a:first-child.sel-first { background: #bbf7d0; }
+        .product.featured h2.sel-feat { color: #dc2626; font-weight: bold; }
+        article > p.sel-direct { border-left: 4px solid #8b5cf6; padding-left: 8px; }
+        a[href="/"].sel-home { background: #fde68a; }
+        .top-bar.dark h1.sel-top { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h2>A2 - Kiem chung selectors (mau = duoc chon)</h2>
+    <div id="app">
+        <header class="top-bar dark">
+            <h1>ShopTLU</h1>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        <main>
+            <article class="product">
+                <h2>iPhone 16</h2>
+                <p class="price">25.990.000 VND</p>
+                <p>Mo ta san pham iPhone...</p>
+            </article>
+            <article class="product featured">
+                <h2>MacBook Pro</h2>
+                <p class="price">45.990.000 VND</p>
+                <p>Mo ta san pham MacBook...</p>
+            </article>
+        </main>
+    </div>
+    <p><small>Script them class highlight cho tung selector khi load.</small></p>
+    <script>
+        const rules = [
+            ['h1', 'sel-h1'],
+            ['.price', 'sel-price'],
+            ['#app header', 'sel-desc'],
+            ['nav a:first-child', 'sel-first'],
+            ['.product.featured h2', 'sel-feat'],
+            ['article > p', 'sel-direct'],
+            ['a[href="/"]', 'sel-home'],
+            ['.top-bar.dark h1', 'sel-top']
+        ];
+        rules.forEach(([sel, cls]) => {
+            document.querySelectorAll(sel).forEach(el => el.classList.add(cls));
+        });
+    </script>
+</body>
+</html>
