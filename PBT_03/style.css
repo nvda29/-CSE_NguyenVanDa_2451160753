@@ -1,0 +1,114 @@
+/* PBT_03 B1 - Profile styles */
+/* Selectors used: universal, element, class, id, descendant, pseudo-class */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f4f6f9;
+    color: #1a1a2e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: #ffffff;
+    padding: 24px 32px;
+}
+
+header h1 {
+    margin: 0 0 12px;
+}
+
+nav a {
+    color: #e0e7ff;
+    text-decoration: none;
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+nav a.active {
+    color: #fbbf24;
+    font-weight: 700;
+    border-bottom: 2px solid #fbbf24;
+}
+
+main {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+section {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+tfoot td {
+    padding: 10px;
+    font-style: italic;
+    color: #64748b;
+}
+
+#contact {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 16px 20px;
+    background: #e0e7ff;
+    border-radius: 8px;
+}
+
+#contact a {
+    color: #1d4ed8;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+figure img {
+    border-radius: 8px;
+}
