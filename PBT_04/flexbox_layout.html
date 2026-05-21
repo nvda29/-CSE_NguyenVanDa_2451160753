@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2 Flexbox - PBT04</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,sans-serif;background:#f8fafc}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px;background:#1e3a8a;color:#fff}
+.logo{font-weight:700;font-size:18px;flex-shrink:0}
+.menu{display:flex;gap:28px;flex:1;justify-content:center}
+.menu a{color:#bfdbfe;text-decoration:none}
+.menu a:hover{color:#fff;text-decoration:underline}
+.auth{display:flex;gap:12px;flex-shrink:0}
+.btn-login{color:#fff;text-decoration:none;padding:8px 12px}
+.btn-register{background:#f59e0b;color:#fff;text-decoration:none;padding:8px 14px;border-radius:6px}
+.main{max-width:1200px;margin:24px auto;padding:0 16px}
+.main h1{color:#0f172a}
+.card-grid{display:flex;flex-wrap:wrap;gap:20px}
+.card{display:flex;flex-direction:column;flex:0 0 calc(25% - 20px);background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.img-ph{height:160px;background:linear-gradient(135deg,#93c5fd,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px}
+.card h3{margin:12px 12px 4px;color:#0f172a}
+.price{margin:0 12px;color:#dc2626;font-weight:600}
+.btn-buy{margin:12px;margin-top:auto;padding:10px;background:#2563eb;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px}
+@media(max-width:900px){.card{flex:0 0 calc(50% - 10px)}}
+@media(max-width:520px){.card{flex:0 0 100%}.menu{display:none}}
+</style>
+</head>
+<body>
+<header class="navbar">
+<span class="logo">LOGO ShopVN</span>
+<nav class="menu">
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+</nav>
+<div class="auth">
+<a href="#" class="btn-login">Login</a>
+<a href="#" class="btn-register">Register</a>
+</div>
+</header>
+<main class="main">
+<h1>Product Cards - Flexbox</h1>
+<div class="card-grid">
+<article class="card"><div class="img-ph">SP1</div><h3>Ao thun</h3><p class="price">199.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP2</div><h3>Quan jean</h3><p class="price">450.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP3</div><h3>Giay sneaker</h3><p class="price">890.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP4</div><h3>Tui xach</h3><p class="price">320.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP5</div><h3>Mu luoi</h3><p class="price">120.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP6</div><h3>Kinh mat</h3><p class="price">250.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP7</div><h3>Dong ho</h3><p class="price">1.200.000 d</p><button class="btn-buy">Mua</button></article>
+<article class="card"><div class="img-ph">SP8</div><h3>That lung</h3><p class="price">180.000 d</p><button class="btn-buy">Mua</button></article>
+</div>
+</main>
+</body>
+</html>
