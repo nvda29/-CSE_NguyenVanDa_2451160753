@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Layout - C1</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+    <h1>Debug Layout - C1</h1>
+
+    <h2>Cach 1: border-box (khuyen nghi)</h2>
+    <div class="container fix-borderbox">
+        <div class="sidebar">Sidebar 300px</div>
+        <div class="content">Content 660px - nam canh sidebar</div>
+    </div>
+
+    <h2>Cach 2: giam width (content-box)</h2>
+    <div class="container fix-width">
+        <div class="sidebar">Sidebar (width da tru padding+border)</div>
+        <div class="content">Content - nam canh sidebar</div>
+    </div>
+</body>
+</html>

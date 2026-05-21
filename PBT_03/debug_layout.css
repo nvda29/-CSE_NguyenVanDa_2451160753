@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 32px;
+    color: #1e40af;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto 24px;
+    border: 2px solid #64748b;
+    overflow: hidden;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.sidebar {
+    float: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #e2e8f0;
+}
+
+.content {
+    float: left;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+}
+
+/* Cach 1: border-box - width bao gom padding+border */
+.fix-borderbox .sidebar {
+    width: 300px;
+}
+
+.fix-borderbox .content {
+    width: 660px;
+}
+
+/* Cach 2: content-box - giam width de tong = 960 */
+.fix-width * {
+    box-sizing: content-box;
+}
+
+.fix-width .sidebar {
+    width: 258px;
+}
+
+.fix-width .content {
+    width: 598px;
+}
