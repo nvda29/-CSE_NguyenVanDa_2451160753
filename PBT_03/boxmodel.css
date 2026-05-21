@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background: #f8fafc;
+}
+
+h1, h2 {
+    color: #0f172a;
+}
+
+.row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #1e40af;
+    margin: 10px;
+    background: #dbeafe;
+}
+
+.box-content {
+    box-sizing: content-box;
+}
+
+.box-border {
+    box-sizing: border-box;
+}
+
+.note {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.layout {
+    width: 1000px;
+    border: 2px dashed #94a3b8;
+    margin: 16px 0;
+    overflow: hidden;
+}
+
+.layout-overflow * {
+    box-sizing: content-box;
+}
+
+.layout-fit * {
+    box-sizing: border-box;
+}
+
+.col {
+    float: left;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+}
+
+.layout-overflow .sidebar,
+.layout-fit .sidebar {
+    width: 250px;
+    background: #e2e8f0;
+}
+
+.layout-overflow .content,
+.layout-fit .content {
+    width: 500px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.layout-overflow .ads,
+.layout-fit .ads {
+    width: 250px;
+    background: #e2e8f0;
+}
+
+.layout-overflow .content {
+    padding: 20px;
+}
+
+.layout::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.margin-demo {
+    margin-top: 40px;
+}
+
+.box-a {
+    background: #fecaca;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.box-b {
+    background: #bbf7d0;
+    padding: 10px;
+    margin-top: 40px;
+}

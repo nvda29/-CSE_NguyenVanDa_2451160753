@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Lab - B2</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+    <h1>Box Model Lab</h1>
+
+    <section>
+        <h2>Phan 1: content-box vs border-box</h2>
+        <p>Cung width 300px, padding 20px, border 5px solid.</p>
+        <div class="row">
+            <div class="box box-content">
+                <strong>Box 1</strong><br>content-box
+            </div>
+            <div class="box box-border">
+                <strong>Box 2</strong><br>border-box
+            </div>
+        </div>
+        <p class="note">F12 &gt; Computed &gt; do chieu rong moi hop. Ghi vao answers.md.</p>
+    </section>
+
+    <section>
+        <h2>Phan 2a: 3 cot KHONG border-box (tong &gt; 1000px)</h2>
+        <div class="layout layout-overflow">
+            <div class="col sidebar">Sidebar 250px</div>
+            <div class="col content">Content 500px</div>
+            <div class="col ads">Ads 250px</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Phan 2b: 3 cot CO border-box (tong = 1000px)</h2>
+        <div class="layout layout-fit">
+            <div class="col sidebar">Sidebar 250px</div>
+            <div class="col content">Content 500px</div>
+            <div class="col ads">Ads 250px</div>
+        </div>
+    </section>
+
+    <section class="margin-demo">
+        <h2>Margin collapse demo</h2>
+        <div class="box-a">box-a margin-bottom 25px</div>
+        <div class="box-b">box-b margin-top 40px</div>
+        <p>Khoang cach thuc te giua 2 hop: 40px (khong phai 65px)</p>
+    </section>
+</body>
+</html>

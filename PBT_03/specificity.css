@@ -1,0 +1,53 @@
+/* 10 rules: specificity tang dan, rule cuoi thang */
+
+/* 1 - 0,0,1 */
+p {
+    color: #9ca3af;
+}
+
+/* 2 - 0,1,0 */
+.highlight {
+    color: #06b6d4;
+}
+
+/* 3 - 0,1,0 (cung cap, thu tu sau hon rule 2 neu bang) */
+.text {
+    color: #3b82f6;
+}
+
+/* 4 - 0,1,1 */
+p.text {
+    color: #22c55e;
+}
+
+/* 5 - 0,2,0 */
+.text.highlight {
+    color: #a855f7;
+}
+
+/* 6 - 1,0,0 */
+#demo {
+    color: #ef4444;
+}
+
+/* 7 - 1,0,1 */
+p#demo {
+    color: #f97316;
+}
+
+/* 8 - 1,1,0 */
+#demo.highlight {
+    color: #ec4899;
+}
+
+/* 9 - 1,2,0 */
+#demo.text.highlight {
+    color: #eab308;
+}
+
+/* 10 - 1,2,1 - THANG */
+p#demo.text.highlight {
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: bold;
+}
