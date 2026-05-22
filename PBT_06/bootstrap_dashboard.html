@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Dashboard - PBT06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,sans-serif;font-size:16px;background:#f8f9fa;color:#212529}
+a{color:#0d6efd;text-decoration:none}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#212529;color:#fff;position:fixed;top:0;left:0;right:0;z-index:1000;height:56px}
+.navbar-brand{font-size:1.25rem;font-weight:700;color:#fff}
+.btn{padding:6px 12px;border-radius:6px;border:1px solid #dee2e6;cursor:pointer;background:#fff}
+.btn-outline-light{background:transparent;border-color:#fff;color:#fff}
+.layout{display:flex;padding-top:56px}
+.sidebar{width:250px;background:#212529;color:#fff;padding:16px;position:fixed;top:56px;left:0;bottom:0}
+.list-group-item{display:block;padding:10px 12px;margin-bottom:6px;color:#fff;border:1px solid #495057;border-radius:6px;background:#212529}
+.list-group-item.active{background:#0d6efd;border-color:#0d6efd}
+.main{margin-left:250px;padding:24px;flex:1}
+.breadcrumb{list-style:none;padding:0;margin:0 0 16px;display:flex;gap:8px;font-size:14px}
+.alert{padding:12px 16px;background:#d1e7dd;border:1px solid #badbcc;border-radius:6px;margin-bottom:16px;display:flex;justify-content:space-between}
+.row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+.col{flex:1;min-width:180px}
+.card{border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.card-body{padding:16px}
+.bg-primary{background:#0d6efd;color:#fff}
+.bg-success{background:#198754;color:#fff}
+.bg-warning{background:#ffc107;color:#000}
+.bg-danger{background:#dc3545;color:#fff}
+.table{width:100%;border-collapse:collapse;background:#fff}
+.table th,.table td{padding:12px;border-bottom:1px solid #dee2e6;text-align:left}
+.table thead{background:#212529;color:#fff}
+.table tbody tr:nth-child(even){background:#f8f9fa}
+.badge{padding:4px 8px;border-radius:4px;font-size:12px;color:#fff}
+.b-success{background:#198754}
+.b-warn{background:#ffc107;color:#000}
+.b-primary{background:#0d6efd}
+.b-danger{background:#dc3545}
+.panel{background:#fff;border:1px solid #dee2e6;border-radius:8px;margin-bottom:24px;overflow:hidden}
+.panel-head{padding:12px 16px;border-bottom:1px solid #dee2e6;font-weight:600}
+.faq{border:1px solid #dee2e6;border-radius:6px;margin-bottom:8px}
+.faq-btn{width:100%;padding:12px 16px;text-align:left;border:none;background:#f8f9fa;cursor:pointer;font-size:15px}
+.faq-body{padding:16px;display:none;background:#fff}
+.faq-body.open{display:block}
+@media(max-width:991px){.sidebar{position:relative;width:100%}.main{margin-left:0}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<span class="navbar-brand">Admin Dashboard</span>
+<button class="btn btn-outline-light" type="button">Nguyen Van Da</button>
+</nav>
+
+<div class="layout">
+<aside class="sidebar">
+<a href="#" class="list-group-item active">Tong quan</a>
+<a href="#" class="list-group-item">Don hang</a>
+<a href="#" class="list-group-item">San pham</a>
+<a href="#" class="list-group-item">Khach hang</a>
+<a href="#" class="list-group-item">Cai dat</a>
+</aside>
+
+<main class="main">
+<ol class="breadcrumb">
+<li><a href="#">Admin</a></li>
+<li>Don hang</li>
+</ol>
+
+<div class="alert">
+<span><strong>Thanh cong!</strong> Cap nhat don hang #1024.</span>
+<button class="btn" type="button" onclick="this.parentElement.style.display='none'">X</button>
+</div>
+
+<div class="row">
+<div class="col"><div class="card bg-primary"><div class="card-body"><h6>Doanh thu</h6><h3>125 trieu</h3></div></div></div>
+<div class="col"><div class="card bg-success"><div class="card-body"><h6>Don hang</h6><h3>1,248</h3></div></div></div>
+<div class="col"><div class="card bg-warning"><div class="card-body"><h6>Cho xu ly</h6><h3>42</h3></div></div></div>
+<div class="col"><div class="card bg-danger"><div class="card-body"><h6>Huy</h6><h3>18</h3></div></div></div>
+</div>
+
+<div class="panel">
+<div class="panel-head">Danh sach don hang</div>
+<table class="table">
+<thead><tr><th>Ma</th><th>Khach</th><th>Tong</th><th>Trang thai</th></tr></thead>
+<tbody>
+<tr><td>#1024</td><td>Tran A</td><td>450.000 d</td><td><span class="badge b-success">Hoan thanh</span></td></tr>
+<tr><td>#1023</td><td>Le B</td><td>199.000 d</td><td><span class="badge b-warn">Cho</span></td></tr>
+<tr><td>#1022</td><td>Pham C</td><td>890.000 d</td><td><span class="badge b-primary">Dang giao</span></td></tr>
+<tr><td>#1021</td><td>Hoang D</td><td>320.000 d</td><td><span class="badge b-danger">Huy</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>FAQ</h4>
+<div class="faq">
+<button class="faq-btn" type="button" onclick="document.getElementById('f1').classList.toggle('open')">Lam sao cap nhat don?</button>
+<div id="f1" class="faq-body open">Vao menu Don hang va chon Sua.</div>
+</div>
+<div class="faq">
+<button class="faq-btn" type="button" onclick="document.getElementById('f2').classList.toggle('open')">Xuat bao cao?</button>
+<div id="f2" class="faq-body">Nut Export CSV o goc phai bang.</div>
+</div>
+
+<p style="font-size:14px;color:#6c757d">PBT06 - Nguyen Van Da - 2451160753</p>
+</main>
+</div>
+
+</body>
+</html>
