@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind Components - PBT06 Track B</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-6 md:p-10">
+<div class="max-w-5xl mx-auto space-y-12">
+<h1 class="text-3xl font-bold text-gray-900">Tailwind Component Library</h1>
+<p class="text-gray-600">Nguyen Van Da - 2451160753</p>
+
+<section>
+<h2 class="text-xl font-semibold mb-4">Buttons</h2>
+<div class="flex flex-wrap gap-3 items-center">
+<button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-300">Primary</button>
+<button class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-gray-400">Secondary</button>
+<button class="px-4 py-2 border-2 border-blue-500 text-blue-600 rounded-md hover:bg-blue-50 focus:ring-2 focus:ring-blue-200">Outline</button>
+<button class="px-4 py-2 bg-gray-300 text-gray-500 rounded-md cursor-not-allowed" disabled>Disabled</button>
+<button class="px-4 py-2 bg-blue-500 text-white rounded-md flex items-center gap-2" disabled>
+<svg class="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+Loading
+</button>
+<button class="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600">Small</button>
+<button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Medium</button>
+<button class="px-6 py-3 text-lg bg-blue-500 text-white rounded-lg hover:bg-blue-600">Large</button>
+</div>
+</section>
+
+<section>
+<h2 class="text-xl font-semibold mb-4">Cards</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+<div class="h-32 bg-blue-500 flex items-center justify-center text-white font-bold">Product</div>
+<div class="p-4"><h3 class="font-semibold">Ao thun</h3><p class="text-red-600 font-bold">199k</p></div>
+</article>
+<article class="flex items-center gap-4 bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold">NV</div>
+<div><h3 class="font-semibold">Nguyen Van Da</h3><p class="text-sm text-gray-500">Sinh vien CSE</p></div>
+</article>
+<article class="bg-white rounded-lg shadow-lg border-2 border-blue-500 p-6 text-center hover:scale-105 transition-transform">
+<h3 class="font-bold text-lg">Pro Plan</h3>
+<p class="text-3xl font-bold text-blue-600 my-2">99k/thang</p>
+<ul class="text-sm text-gray-600 mb-4 space-y-1"><li>Feature 1</li><li>Feature 2</li></ul>
+<button class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Chon goi</button>
+</article>
+</div>
+</section>
+
+<section>
+<h2 class="text-xl font-semibold mb-4">Forms</h2>
+<form class="max-w-md space-y-4 bg-white p-6 rounded-lg shadow">
+<div>
+<label class="block text-sm font-medium mb-1">Ho ten</label>
+<input type="text" class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-500 outline-none" placeholder="Nhap ten">
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Thanh pho</label>
+<select class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none">
+<option>Ha Noi</option><option>TP.HCM</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Ghi chu</label>
+<textarea rows="3" class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"></textarea>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-2"><input type="checkbox" class="rounded focus:ring-blue-400"> Dong y dieu khoan</label>
+<label class="flex items-center gap-2"><input type="checkbox" class="rounded focus:ring-blue-400"> Nhan email</label>
+</div>
+<button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-300">Gui</button>
+</form>
+</section>
+
+<section>
+<h2 class="text-xl font-semibold mb-4">Alerts</h2>
+<div class="space-y-3 max-w-lg">
+<div class="flex justify-between items-center p-4 bg-green-100 text-green-800 rounded-lg border border-green-200">
+<span>Thanh cong!</span><button class="text-green-600 hover:text-green-900 font-bold">&times;</button>
+</div>
+<div class="flex justify-between items-center p-4 bg-red-100 text-red-800 rounded-lg border border-red-200">
+<span>Loi he thong</span><button class="font-bold">&times;</button>
+</div>
+<div class="flex justify-between items-center p-4 bg-yellow-100 text-yellow-800 rounded-lg border border-yellow-200">
+<span>Canh bao</span><button class="font-bold">&times;</button>
+</div>
+<div class="flex justify-between items-center p-4 bg-blue-100 text-blue-800 rounded-lg border border-blue-200">
+<span>Thong tin</span><button class="font-bold">&times;</button>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="text-xl font-semibold mb-4">Navigation</h2>
+<nav class="flex justify-between items-center bg-white shadow rounded-lg p-4 mb-6">
+<span class="font-bold text-blue-600">Logo</span>
+<div class="hidden md:flex gap-4"><a href="#" class="hover:text-blue-600">Home</a><a href="#" class="hover:text-blue-600">About</a></div>
+</nav>
+<aside class="w-full md:w-56 bg-gray-800 text-white rounded-lg p-4 space-y-2">
+<a href="#" class="block px-3 py-2 rounded bg-gray-700">Dashboard</a>
+<a href="#" class="block px-3 py-2 rounded hover:bg-gray-700">Orders</a>
+<a href="#" class="block px-3 py-2 rounded hover:bg-gray-700">Settings</a>
+</aside>
+</section>
+</div>
+</body>
+</html>

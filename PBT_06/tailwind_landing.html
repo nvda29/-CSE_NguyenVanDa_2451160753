@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi" class="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind Landing - PBT06 Track B</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { darkMode: 'class' };
+function toggleDark(){document.documentElement.classList.toggle('dark');}
+</script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+<header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+<nav class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 p-4">
+<a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400">ShopVN</a>
+<details class="md:hidden w-full">
+<summary class="cursor-pointer py-2 font-medium dark:text-gray-200">Menu</summary>
+<ul class="flex flex-col gap-2 mt-2 text-gray-700 dark:text-gray-300">
+<li><a href="#">Trang chu</a></li><li><a href="#">San pham</a></li><li><a href="#">Khuyen mai</a></li>
+</ul>
+</details>
+<ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300">
+<li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Trang chu</a></li>
+<li><a href="#" class="hover:text-blue-600">San pham</a></li>
+<li><a href="#" class="hover:text-blue-600">Khuyen mai</a></li>
+</ul>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<input type="search" placeholder="Tim kiem..." class="flex-1 md:w-48 px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-blue-400">
+<button type="button" onclick="toggleDark()" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm">Dark</button>
+<span class="text-sm font-medium dark:text-gray-300">Gio (2)</span>
+</div>
+</nav>
+</header>
+
+<section class="bg-gradient-to-r from-blue-700 to-blue-500 dark:from-blue-900 dark:to-blue-700 text-white py-20 px-4 text-center">
+<h1 class="text-3xl md:text-5xl font-bold mb-4">Khuyen mai he 2026</h1>
+<p class="text-lg md:text-xl mb-8 opacity-90">Giam den 50% - Nguyen Van Da - 2451160753</p>
+<a href="#" class="inline-block px-8 py-3 bg-white text-blue-700 dark:bg-gray-800 dark:text-white font-semibold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Mua ngay</a>
+</section>
+
+<main class="max-w-6xl mx-auto px-4 py-12">
+<h2 class="text-2xl font-bold text-center mb-8 dark:text-white">San pham noi bat</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+<span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">Sale</span>
+<div class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">SP1</div>
+<div class="p-4">
+<h3 class="font-semibold text-gray-800 dark:text-gray-100">Ao thun</h3>
+<p class="text-red-600 dark:text-red-400 font-bold mt-1">199.000 d</p>
+<button class="mt-3 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-300">Mua</button>
+</div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+<span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">Sale</span>
+<div class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">SP2</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Quan jean</h3><p class="text-red-600 font-bold mt-1">450.000 d</p><button class="mt-3 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Mua</button></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">SP3</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Giay</h3><p class="text-red-600 font-bold mt-1">890.000 d</p><button class="mt-3 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Mua</button></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">SP4</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Tui</h3><p class="text-red-600 font-bold mt-1">320.000 d</p><button class="mt-3 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Mua</button></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SP5</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Mu</h3><p class="text-red-600 font-bold mt-1">120.000 d</p></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SP6</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Kinh</h3><p class="text-red-600 font-bold mt-1">250.000 d</p></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SP7</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">Dong ho</h3><p class="text-red-600 font-bold mt-1">1.2tr</p></div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<div class="h-40 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SP8</div>
+<div class="p-4"><h3 class="font-semibold dark:text-gray-100">That lung</h3><p class="text-red-600 font-bold mt-1">180.000 d</p></div>
+</article>
+</div>
+</main>
+
+<footer class="bg-gray-800 dark:bg-black text-gray-300 mt-12 py-10 px-4">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div><h4 class="text-white font-bold mb-2">Ve ShopVN</h4><p class="text-sm">Cua hang online</p></div>
+<div><h4 class="text-white font-bold mb-2">Lien ket</h4><ul class="text-sm space-y-1"><li>Chinh sach</li><li>Bao mat</li></ul></div>
+<div><h4 class="text-white font-bold mb-2">Ho tro</h4><p class="text-sm">1900-xxxx</p></div>
+<div><h4 class="text-white font-bold mb-2">Lien he</h4><p class="text-sm">Ha Noi</p></div>
+</div>
+<p class="text-center text-sm mt-8 text-gray-500">PBT06 Tailwind - Track B</p>
+</footer>
+</body>
+</html>
