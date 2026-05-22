@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2 Animations - PBT05</title>
+<link rel="stylesheet" href="animations.css">
+<style>
+*{box-sizing:border-box}
+body{font-family:Segoe UI,sans-serif;margin:0;padding:24px;background:#f8fafc}
+section{margin-bottom:48px}
+.demo-card{width:260px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .3s ease}
+.demo-card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+.demo-card .img-wrap{overflow:hidden;height:160px}
+.demo-card .img-inner{height:100%;background:linear-gradient(135deg,#60a5fa,#1d4ed8);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;transition:transform .3s ease}
+.demo-card:hover .img-inner{transform:scale(1.1)}
+.demo-card .body{padding:16px}
+.btn-buy{padding:10px 20px;background:#2563eb;color:#fff;border:none;border-radius:6px;cursor:pointer;transition:all .3s ease}
+.btn-buy:hover{background:#1e40af;transform:scale(1.05)}
+.spinner{width:48px;height:48px;border:4px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fade-box{padding:24px;background:#fff;border-radius:8px;animation:fadeIn 1s ease forwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<h1>B2 - Transitions &amp; Animations</h1>
+<p>Nguyen Van Da - 2451160753</p>
+
+<section>
+<h2>1. Card hover (translateY + shadow)</h2>
+<article class="demo-card">
+<div class="img-wrap"><div class="img-inner">SP1</div></div>
+<div class="body"><h3>San pham</h3><button class="btn-buy">Mua ngay</button></div>
+</article>
+</section>
+
+<section>
+<h2>2. Button hover (mau + scale 1.05)</h2>
+<button class="btn-buy">Mua ngay</button>
+</section>
+
+<section>
+<h2>3. Image zoom khi hover card</h2>
+<p>Hover card o tren de thay anh scale 1.1</p>
+</section>
+
+<section>
+<h2>4. Loading spinner (@keyframes spin)</h2>
+<div class="spinner"></div>
+</section>
+
+<section>
+<h2>5. Fade-in (@keyframes fadeIn)</h2>
+<div class="fade-box">Noi dung fade-in tu duoi len</div>
+</section>
+</body>
+</html>
