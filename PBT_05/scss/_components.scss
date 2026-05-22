@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'mixins';
+
+.card {
+  background: #fff;
+  overflow: hidden;
+  @include card-shadow;
+
+  .card-image {
+    height: 160px;
+    background: linear-gradient(135deg, #93c5fd, $primary-color);
+    @include flex-center;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .card-title {
+    margin: 0 0 $spacing-sm;
+    font-size: 1rem;
+    color: $text-main;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &.featured {
+    border: 2px solid $primary-color;
+  }
+}
+
+.product-grid-scss {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to($breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to($breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: #fff;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: 6px;
+
+  &:hover {
+    background: darken($primary-color, 8%);
+  }
+}
