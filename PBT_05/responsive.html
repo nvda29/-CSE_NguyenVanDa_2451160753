@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B1 Responsive - PBT05</title>
+<link rel="stylesheet" href="responsive.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,sans-serif;font-size:14px;background:#f1f5f9}
+img,.product-img{max-width:100%;height:auto;display:block}
+.site-header{background:#0f172a;color:#fff;padding:12px 16px;position:relative}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.logo{font-weight:700}
+.menu-check{display:none}
+.menu-btn{display:block;font-size:28px;cursor:pointer}
+.nav-menu{display:none;flex-direction:column;gap:8px;background:#1e293b;position:absolute;top:100%;left:0;right:0;padding:12px 16px;z-index:100}
+.menu-check:checked~.nav-menu{display:flex}
+.nav-menu a{color:#e2e8f0;text-decoration:none}
+.filter-bar{display:none;background:#fff;padding:12px 16px;border-bottom:1px solid #e2e8f0}
+.layout{max-width:1200px;margin:0 auto;padding:16px}
+.sidebar{display:none}
+.ads{display:none}
+.product-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card .product-img{height:160px;background:linear-gradient(135deg,#93c5fd,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.25rem}
+.card-body{padding:12px}
+.price{color:#dc2626;font-weight:600}
+.site-footer{background:#334155;color:#cbd5e1;text-align:center;padding:20px;margin-top:24px}
+@media(min-width:768px){
+body{font-size:15px}
+.menu-btn{display:none}
+.nav-menu{display:flex!important;flex-direction:row;position:static;background:transparent;padding:0;gap:20px}
+.filter-bar{display:block}
+.product-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1024px){
+body{font-size:16px}
+.filter-bar{display:none}
+.page-grid{display:grid;grid-template-columns:200px 1fr 180px;gap:20px}
+.sidebar{display:block;background:#fff;padding:16px;border-radius:8px}
+.ads{display:block;background:#fff;padding:16px;border-radius:8px}
+.ads .ad-box{height:140px;background:#94a3b8;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px;border-radius:6px}
+.product-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<span class="logo">ShopVN</span>
+<input type="checkbox" id="menu-check" class="menu-check">
+<label for="menu-check" class="menu-btn" aria-label="Menu">&#9776;</label>
+<nav class="nav-menu">
+<a href="#">Trang chu</a>
+<a href="#">San pham</a>
+<a href="#">Khuyen mai</a>
+<a href="#">Lien he</a>
+</nav>
+</div>
+</header>
+<div class="filter-bar">
+<label>Filter: </label>
+<select>
+<option>Tat ca</option>
+<option>Duoi 500k</option>
+<option>Tren 1 trieu</option>
+</select>
+</div>
+<div class="layout">
+<div class="page-grid">
+<aside class="sidebar">
+<h3>Bo loc</h3>
+<label><input type="checkbox"> Duoi 500k</label>
+<label><input type="checkbox"> Hang moi</label>
+<label><input type="checkbox"> Khuyen mai</label>
+</aside>
+<main>
+<h1>San pham</h1>
+<div class="product-grid">
+<article class="card"><div class="product-img">SP1</div><div class="card-body"><h3>Ao thun</h3><p class="price">199.000 d</p></div></article>
+<article class="card"><div class="product-img">SP2</div><div class="card-body"><h3>Quan jean</h3><p class="price">450.000 d</p></div></article>
+<article class="card"><div class="product-img">SP3</div><div class="card-body"><h3>Giay</h3><p class="price">890.000 d</p></div></article>
+<article class="card"><div class="product-img">SP4</div><div class="card-body"><h3>Tui xach</h3><p class="price">320.000 d</p></div></article>
+<article class="card"><div class="product-img">SP5</div><div class="card-body"><h3>Mu</h3><p class="price">120.000 d</p></div></article>
+<article class="card"><div class="product-img">SP6</div><div class="card-body"><h3>Kinh</h3><p class="price">250.000 d</p></div></article>
+<article class="card"><div class="product-img">SP7</div><div class="card-body"><h3>Dong ho</h3><p class="price">1.200.000 d</p></div></article>
+<article class="card"><div class="product-img">SP8</div><div class="card-body"><h3>That lung</h3><p class="price">180.000 d</p></div></article>
+</div>
+</main>
+<aside class="ads">
+<div class="ad-box">ADS 1</div>
+<div class="ad-box">ADS 2</div>
+</aside>
+</div>
+</div>
+<footer class="site-footer"><p>PBT05 Responsive - Nguyen Van Da - 2451160753</p></footer>
+</body>
+</html>
