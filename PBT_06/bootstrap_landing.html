@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Landing - PBT06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,sans-serif;background:#f8f9fa;color:#212529}
+a{text-decoration:none;color:inherit}
+.navbar{background:#212529;color:#fff;padding:12px 0;position:sticky;top:0;z-index:100}
+.container{max-width:1140px;margin:0 auto;padding:0 16px}
+.nav-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.navbar-brand{font-weight:700;font-size:1.25rem;color:#fff}
+.nav-links{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+.nav-links a{color:#dee2e6;padding:8px}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.form-control{padding:8px 12px;border:1px solid #ced4da;border-radius:6px}
+.btn{padding:8px 14px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-size:14px}
+.btn-outline-light{background:transparent;border-color:#fff;color:#fff}
+.btn-primary{background:#0d6efd;color:#fff;border:none}
+.btn-light{background:#fff;color:#212529}
+.btn-warning{background:#ffc107;color:#000}
+.btn-success{background:#198754;color:#fff}
+.carousel{position:relative;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;min-height:280px;text-align:center}
+.carousel-inner{padding:60px 20px}
+.carousel-caption h2{font-size:2rem;margin:0 0 8px}
+.carousel-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer}
+.dot.active{background:#fff}
+.carousel-arrows button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.3);color:#fff;border:none;padding:12px 16px;cursor:pointer;font-size:18px}
+.carousel-prev{left:12px}
+.carousel-next{right:12px}
+main.container{padding:40px 16px}
+h1.page-title{text-align:center;margin-bottom:32px}
+.row{display:flex;flex-wrap:wrap;margin:-12px}
+.col{padding:12px;width:100%}
+@media(min-width:768px){.col-md-6{width:50%}}
+@media(min-width:992px){.col-lg-3{width:25%}}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden;height:100%;display:flex;flex-direction:column;position:relative}
+.card-img{height:180px;background:linear-gradient(135deg,#60a5fa,#1d4ed8);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.5rem}
+.card-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.card-title{margin:0 0 8px;font-size:1.1rem}
+.card-text{color:#dc3545;font-weight:600;margin:0 0 12px}
+.badge-sale{position:absolute;top:10px;right:10px;background:#dc3545;color:#fff;padding:6px 10px;border-radius:4px;font-size:12px;font-weight:700}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-content{background:#fff;border-radius:8px;max-width:480px;width:100%;overflow:hidden}
+.modal-header{display:flex;justify-content:space-between;padding:16px;border-bottom:1px solid #dee2e6}
+.modal-body{padding:16px}
+.modal-footer{padding:16px;border-top:1px solid #dee2e6;display:flex;gap:8px;justify-content:flex-end}
+.btn-close{background:none;border:none;font-size:1.5rem;cursor:pointer}
+footer{background:#212529;color:#adb5bd;padding:40px 16px;margin-top:40px}
+.footer-row{display:flex;flex-wrap:wrap;margin:-12px}
+.footer-col{padding:12px;width:100%}
+@media(min-width:768px){.footer-col{width:50%}}
+@media(min-width:992px){.footer-col{width:25%}}
+footer h5{color:#fff;margin:0 0 12px}
+footer a{color:#adb5bd}
+.nav-toggle{display:none;background:none;border:1px solid #fff;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer}
+@media(max-width:991px){
+.nav-toggle{display:block}
+.nav-menu{display:none;width:100%}
+.nav-menu.open{display:flex;flex-direction:column}
+.nav-links{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="container nav-inner">
+<a class="navbar-brand" href="#">ShopVN</a>
+<button class="nav-toggle" type="button" onclick="document.getElementById('navMenu').classList.toggle('open')">Menu</button>
+<div class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="#" class="active">Trang chu</a></li>
+<li><a href="#">San pham</a></li>
+<li><a href="#">Khuyen mai</a></li>
+</ul>
+<div class="nav-right">
+<input class="form-control" type="search" placeholder="Tim kiem...">
+<button class="btn btn-outline-light" type="button">Tim</button>
+<span style="color:#fff;font-size:14px">Gio hang (3)</span>
+</div>
+</div>
+</div>
+</nav>
+
+<div class="carousel" id="carousel">
+<div class="carousel-inner" id="slide0">
+<div class="carousel-caption">
+<h2>Khuyen mai he 2026</h2>
+<p>Giam den 50%</p>
+<button class="btn btn-light btn-lg" type="button">Mua ngay</button>
+</div>
+</div>
+<div class="carousel-inner" id="slide1" style="display:none">
+<div class="carousel-caption">
+<h2>Hang moi ve</h2>
+<p>Cap nhat moi tuan</p>
+<button class="btn btn-warning btn-lg" type="button">Xem ngay</button>
+</div>
+</div>
+<div class="carousel-inner" id="slide2" style="display:none">
+<div class="carousel-caption">
+<h2>Freeship</h2>
+<p>Don tu 299k</p>
+<button class="btn btn-success btn-lg" type="button">Dat hang</button>
+</div>
+</div>
+<button class="carousel-arrows carousel-prev" type="button" onclick="prevSlide()">&lt;</button>
+<button class="carousel-arrows carousel-next" type="button" onclick="nextSlide()">&gt;</button>
+<div class="carousel-dots">
+<button class="dot active" type="button" onclick="goSlide(0)"></button>
+<button class="dot" type="button" onclick="goSlide(1)"></button>
+<button class="dot" type="button" onclick="goSlide(2)"></button>
+</div>
+</div>
+
+<main class="container">
+<h1 class="page-title">San pham noi bat</h1>
+<div class="row">
+<div class="col col-md-6 col-lg-3">
+<div class="card">
+<span class="badge-sale">Sale</span>
+<div class="card-img">SP1</div>
+<div class="card-body">
+<h5 class="card-title">Ao thun basic</h5>
+<p class="card-text">199.000 d</p>
+<button class="btn btn-primary" type="button" onclick="openModal('m1')">Xem nhanh</button>
+</div>
+</div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card">
+<span class="badge-sale">Sale</span>
+<div class="card-img">SP2</div>
+<div class="card-body">
+<h5 class="card-title">Quan jean</h5>
+<p class="card-text">450.000 d</p>
+<button class="btn btn-primary" type="button" onclick="openModal('m2')">Xem nhanh</button>
+</div>
+</div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card">
+<div class="card-img">SP3</div>
+<div class="card-body">
+<h5 class="card-title">Giay sneaker</h5>
+<p class="card-text">890.000 d</p>
+<button class="btn btn-primary" type="button" onclick="openModal('m3')">Xem nhanh</button>
+</div>
+</div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card">
+<div class="card-img">SP4</div>
+<div class="card-body">
+<h5 class="card-title">Tui xach</h5>
+<p class="card-text">320.000 d</p>
+<button class="btn btn-primary" type="button" onclick="openModal('m4')">Xem nhanh</button>
+</div>
+</div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card"><div class="card-img">SP5</div><div class="card-body"><h5 class="card-title">Mu luoi</h5><p class="card-text">120.000 d</p></div></div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card"><div class="card-img">SP6</div><div class="card-body"><h5 class="card-title">Kinh mat</h5><p class="card-text">250.000 d</p></div></div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card"><div class="card-img">SP7</div><div class="card-body"><h5 class="card-title">Dong ho</h5><p class="card-text">1.200.000 d</p></div></div>
+</div>
+<div class="col col-md-6 col-lg-3">
+<div class="card"><div class="card-img">SP8</div><div class="card-body"><h5 class="card-title">That lung</h5><p class="card-text">180.000 d</p></div></div>
+</div>
+</div>
+</main>
+
+<div class="modal" id="m1" onclick="if(event.target===this)closeModal('m1')">
+<div class="modal-content">
+<div class="modal-header"><h5>Ao thun basic</h5><button class="btn-close" type="button" onclick="closeModal('m1')">&times;</button></div>
+<div class="modal-body">Cotton 100%. Gia 199.000 d.</div>
+<div class="modal-footer"><button class="btn btn-primary" type="button" onclick="closeModal('m1')">Dong</button></div>
+</div>
+</div>
+<div class="modal" id="m2" onclick="if(event.target===this)closeModal('m2')">
+<div class="modal-content">
+<div class="modal-header"><h5>Quan jean</h5><button class="btn-close" type="button" onclick="closeModal('m2')">&times;</button></div>
+<div class="modal-body">Jean slim fit.</div>
+<div class="modal-footer"><button class="btn btn-primary" type="button" onclick="closeModal('m2')">OK</button></div>
+</div>
+</div>
+<div class="modal" id="m3" onclick="if(event.target===this)closeModal('m3')">
+<div class="modal-content">
+<div class="modal-header"><h5>Giay sneaker</h5><button class="btn-close" type="button" onclick="closeModal('m3')">&times;</button></div>
+<div class="modal-body">De cao su chong truot.</div>
+</div>
+</div>
+<div class="modal" id="m4" onclick="if(event.target===this)closeModal('m4')">
+<div class="modal-content">
+<div class="modal-header"><h5>Tui xach</h5><button class="btn-close" type="button" onclick="closeModal('m4')">&times;</button></div>
+<div class="modal-body">Da PU cao cap.</div>
+</div>
+</div>
+
+<footer>
+<div class="container footer-row">
+<div class="footer-col"><h5>Ve ShopVN</h5><p>Cua hang online</p></div>
+<div class="footer-col"><h5>Lien ket</h5><p><a href="#">Chinh sach</a></p></div>
+<div class="footer-col"><h5>Ho tro</h5><p>1900-xxxx</p></div>
+<div class="footer-col"><h5>Lien he</h5><p>Ha Noi</p></div>
+</div>
+<p style="text-align:center;margin-top:24px;font-size:14px">PBT06 Bootstrap - Nguyen Van Da - 2451160753</p>
+</footer>
+
+<script>
+var cur=0;
+function goSlide(n){
+  cur=n;
+  for(var i=0;i<3;i++){
+    document.getElementById('slide'+i).style.display=i===n?'block':'none';
+    document.querySelectorAll('.dot')[i].classList.toggle('active',i===n);
+  }
+}
+function nextSlide(){goSlide((cur+1)%3)}
+function prevSlide(){goSlide((cur+2)%3)}
+function openModal(id){document.getElementById(id).classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+setInterval(nextSlide,5000);
+</script>
+</body>
+</html>
