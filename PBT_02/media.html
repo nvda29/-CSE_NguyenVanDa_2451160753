@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multimedia - PBT02 B2</title>
+<style>
+body{font-family:Segoe UI,sans-serif;max-width:900px;margin:0 auto;padding:24px;background:#f8fafc;color:#0f172a}
+h1{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin:32px 0}
+figure{margin:0;background:#fff;padding:12px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+figure img,.ph{display:block;width:100%;max-width:100%;height:auto;border-radius:6px}
+.ph{height:200px;background:linear-gradient(135deg,#93c5fd,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.25rem}
+figcaption{margin-top:10px;font-size:14px;color:#475569;text-align:center}
+.section{margin:40px 0}
+.section h2{border-bottom:2px solid #2563eb;padding-bottom:8px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+video,audio{max-width:100%;border-radius:8px}
+.logo{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.logo svg{width:48px;height:48px}
+</style>
+</head>
+<body>
+
+<div class="logo">
+<svg viewBox="0 0 48 48" aria-label="Logo ShopVN">
+<circle cx="24" cy="24" r="22" fill="#2563eb"/>
+<rect x="14" y="14" width="20" height="20" rx="4" fill="#fff"/>
+</svg>
+<h1>Gioi thieu san pham - Multimedia</h1>
+</div>
+<p style="text-align:center">Nguyen Van Da - 2451160753</p>
+
+<section class="section">
+<h2>Anh san pham (figure + lazy)</h2>
+<div class="grid">
+<figure>
+<div class="ph" role="img" aria-label="iPhone 16 Pro">iPhone 16</div>
+<figcaption>iPhone 16 Pro Max - 25.990.000 d</figcaption>
+</figure>
+<figure>
+<div class="ph" role="img" aria-label="MacBook Air M3">MacBook</div>
+<figcaption>MacBook Air M3 - 28.990.000 d</figcaption>
+</figure>
+<figure>
+<div class="ph" role="img" aria-label="Tai nghe Sony WH">Tai nghe</div>
+<figcaption>Tai nghe Sony WH-1000 - 5.990.000 d</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="section">
+<h2>Video YouTube</h2>
+<div class="video-wrap">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video gioi thieu san pham" allowfullscreen loading="lazy"></iframe>
+</div>
+</section>
+
+<section class="section">
+<h2>Video HTML5 (2 source)</h2>
+<video controls width="100%" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect fill='%231e40af' width='640' height='360'/%3E%3Ctext fill='white' x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='24'%3EPoster Video%3C/text%3E%3C/svg%3E">
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+<source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+Trinh duyet khong ho tro video.
+</video>
+</section>
+
+<section class="section">
+<h2>Audio</h2>
+<audio controls src="https://www.w3schools.com/html/horse.mp3">
+Trinh duyet khong ho tro audio.
+</audio>
+<p style="font-size:14px;color:#64748b">Nhac nen gioi thieu (mau W3Schools)</p>
+</section>
+
+</body>
+</html>
