@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dang ky - PBT02 B1</title>
+<style>
+body{font-family:Segoe UI,sans-serif;max-width:640px;margin:0 auto;padding:24px;background:#f8fafc;color:#0f172a}
+h1{text-align:center}
+fieldset{border:1px solid #cbd5e1;border-radius:8px;padding:16px 20px;margin-bottom:20px;background:#fff}
+legend{font-weight:700;color:#1e40af;padding:0 8px}
+.form-group{margin-bottom:14px}
+label{display:block;margin-bottom:4px;font-weight:600;font-size:14px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #94a3b8;border-radius:6px;font-size:15px}
+.radio-group{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.radio-group label{display:inline;font-weight:400}
+.checkbox-group{margin:16px 0}
+.checkbox-group label{display:inline;font-weight:400}
+.actions{display:flex;gap:12px;margin-top:20px}
+button{padding:12px 24px;border-radius:6px;border:none;font-size:15px;cursor:pointer}
+button[type=submit]{background:#2563eb;color:#fff}
+button[type=reset]{background:#e2e8f0;color:#334155}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var d=new Date();
+  var s=d.toISOString().split('T')[0];
+  document.getElementById('dob').setAttribute('max',s);
+});
+</script>
+</head>
+<body>
+<h1>Dang ky tai khoan ShopVN</h1>
+<p style="text-align:center;color:#64748b">Nguyen Van Da - 2451160753 - PBT02</p>
+
+<form action="#" method="post">
+<fieldset>
+<legend>Thong tin ca nhan</legend>
+<div class="form-group">
+<label for="fullname">Ho ten</label>
+<input type="text" id="fullname" name="fullname" required minlength="2" maxlength="50" placeholder="Nguyen Van A">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required placeholder="you@email.com">
+</div>
+<div class="form-group">
+<label for="phone">So dien thoai</label>
+<input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="0901234567" title="10 chu so">
+</div>
+<div class="form-group">
+<label for="dob">Ngay sinh</label>
+<input type="date" id="dob" name="dob" required placeholder="YYYY-MM-DD">
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Tai khoan</legend>
+<div class="form-group">
+<label for="username">Username</label>
+<input type="text" id="username" name="username" required pattern="[a-zA-Z0-9_]{3,20}" placeholder="user_123" title="3-20 ky tu, chu so _">
+</div>
+<div class="form-group">
+<label for="password">Mat khau</label>
+<input type="password" id="password" name="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}" placeholder="Abc12345" title="It nhat 8 ky tu, 1 hoa, 1 so">
+</div>
+<div class="form-group">
+<label for="password2">Xac nhan mat khau</label>
+<input type="password" id="password2" name="password2" required minlength="8" placeholder="Nhap lai mat khau">
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Thong tin giao hang</legend>
+<div class="form-group">
+<label for="city">Thanh pho</label>
+<select id="city" name="city" required>
+<option value="">-- Chon --</option>
+<option>Ha Noi</option>
+<option>TP. Ho Chi Minh</option>
+<option>Da Nang</option>
+<option>Hai Phong</option>
+<option>Can Tho</option>
+</select>
+</div>
+<div class="form-group">
+<label for="district">Quan / Huyen</label>
+<select id="district" name="district" required>
+<option>Quan 1</option>
+<option>Quan Ba Dinh</option>
+<option>Huyen Cai Rang</option>
+</select>
+</div>
+<div class="form-group">
+<label for="address">Dia chi chi tiet</label>
+<textarea id="address" name="address" rows="3" required placeholder="So nha, duong, phuong..."></textarea>
+</div>
+<div class="form-group">
+<span style="font-weight:600">Gioi tinh</span>
+<div class="radio-group">
+<label><input type="radio" name="gender" value="nam" required> Nam</label>
+<label><input type="radio" name="gender" value="nu"> Nu</label>
+<label><input type="radio" name="gender" value="khac"> Khac</label>
+</div>
+</div>
+</fieldset>
+
+<div class="checkbox-group">
+<label><input type="checkbox" name="agree" required> Toi dong y dieu khoan su dung</label>
+</div>
+
+<div class="actions">
+<button type="submit">Dang ky</button>
+<button type="reset">Reset</button>
+</div>
+</form>
+</body>
+</html>
