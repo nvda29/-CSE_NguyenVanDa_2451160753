@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Test - PBT02 A2</title>
+<style>
+body{font-family:Segoe UI,sans-serif;max-width:600px;margin:40px auto;padding:20px;background:#f1f5f9}
+h1{font-size:1.5rem}
+fieldset{border:1px solid #cbd5e1;border-radius:8px;padding:16px;margin-bottom:16px;background:#fff}
+legend{font-weight:700;padding:0 8px}
+label{display:block;margin:12px 0 4px;font-weight:600}
+input{width:100%;padding:10px;border:1px solid #94a3b8;border-radius:6px;font-size:15px}
+.btn-submit{margin-top:16px;padding:12px 24px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:16px;cursor:pointer}
+.note{font-size:14px;color:#64748b;margin-bottom:20px}
+</style>
+</head>
+<body>
+<h1>Validation Test - 5 truong hop A2</h1>
+<p class="note">Bam Submit de xem thong bao loi. Chup man hinh cho answers + screenshots.</p>
+
+<form action="#" method="post">
+<fieldset>
+<legend>5 truong hop</legend>
+
+<label for="f1">TH1 - Text required (de trong)</label>
+<input type="text" id="f1" name="f1" required value="" placeholder="De trong roi submit">
+
+<label for="f2">TH2 - Email (abc)</label>
+<input type="email" id="f2" name="f2" value="abc" placeholder="abc">
+
+<label for="f3">TH3 - Number min 1 max 10 (15)</label>
+<input type="number" id="f3" name="f3" min="1" max="10" value="15">
+
+<label for="f4">TH4 - Pattern 10 so (abc123)</label>
+<input type="text" id="f4" name="f4" pattern="[0-9]{10}" value="abc123" placeholder="10 chu so">
+
+<label for="f5">TH5 - Password minlength 8 (123)</label>
+<input type="password" id="f5" name="f5" minlength="8" value="123" placeholder="123">
+</fieldset>
+
+<button class="btn-submit" type="submit">Submit - Test validation</button>
+</form>
+</body>
+</html>
