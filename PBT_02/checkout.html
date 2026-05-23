@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - PBT02 B3</title>
+<style>
+body{font-family:Segoe UI,sans-serif;max-width:800px;margin:0 auto;padding:24px;background:#f8fafc}
+h1{text-align:center}
+section{background:#fff;border-radius:8px;padding:20px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+h2{margin-top:0;color:#1e40af;font-size:1.1rem}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th,td{border:1px solid #e2e8f0;padding:10px;text-align:left}
+thead{background:#f1f5f9}
+tfoot{font-weight:700;background:#eff6ff}
+label{display:block;margin:10px 0 4px;font-weight:600;font-size:14px}
+input,select,textarea{width:100%;max-width:100%;padding:10px;border:1px solid #94a3b8;border-radius:6px}
+.radio-row{display:flex;gap:20px;flex-wrap:wrap;margin:8px 0}
+.radio-row label{display:inline;font-weight:400}
+output{display:block;font-size:1.25rem;font-weight:700;color:#dc2626;margin:8px 0}
+meter,progress{display:block;width:100%;max-width:300px;margin:8px 0}
+.btn-submit{padding:14px 28px;background:#16a34a;color:#fff;border:none;border-radius:6px;font-size:16px;cursor:pointer;margin-top:16px}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var t=new Date();
+  t.setDate(t.getDate()+1);
+  document.getElementById('shipdate').setAttribute('min',t.toISOString().split('T')[0]);
+});
+</script>
+</head>
+<body>
+<h1>Dat hang - Checkout</h1>
+<p style="text-align:center;color:#64748b">Nguyen Van Da - 2451160753</p>
+
+<section>
+<h2>1. Gio hang</h2>
+<table>
+<thead>
+<tr><th>STT</th><th>San pham</th><th>Don gia</th><th>So luong</th><th>Thanh tien</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Ao thun</td><td>199.000 d</td><td>2</td><td>398.000 d</td></tr>
+<tr><td>2</td><td>Quan jean</td><td>450.000 d</td><td>1</td><td>450.000 d</td></tr>
+<tr><td>3</td><td>Giay sneaker</td><td>890.000 d</td><td>1</td><td>890.000 d</td></tr>
+</tbody>
+<tfoot>
+<tr><td colspan="4">Tong cong</td><td>1.738.000 d</td></tr>
+</tfoot>
+</table>
+<label for="search">Tim san pham (datalist)</label>
+<input type="text" id="search" name="search" list="products" placeholder="Go ten SP...">
+<datalist id="products">
+<option value="Ao thun">
+<option value="Quan jean">
+<option value="Giay sneaker">
+</datalist>
+<output for="search">Tong don hang: 1.738.000 d</output>
+<label>Diem tich luy</label>
+<meter value="0.7" min="0" max="1" low="0.3" high="0.8" optimum="0.9">70%</meter>
+<label>Tien do don hang</label>
+<progress value="60" max="100">60%</progress>
+</section>
+
+<form action="#" method="post">
+<section>
+<h2>2. Thanh toan</h2>
+<span style="font-weight:600">Phuong thuc thanh toan</span>
+<div class="radio-row">
+<label><input type="radio" name="pay" value="cod" required checked> COD</label>
+<label><input type="radio" name="pay" value="bank"> Chuyen khoan</label>
+<label><input type="radio" name="pay" value="wallet"> Vi dien tu</label>
+</div>
+<label for="coupon">Ma giam gia (SALE + 4 so)</label>
+<input type="text" id="coupon" name="coupon" pattern="SALE[0-9]{4}" placeholder="SALE2026" title="VD: SALE2026">
+<label for="note">Ghi chu (tuy chon)</label>
+<textarea id="note" name="note" rows="3" placeholder="Ghi chu don hang..."></textarea>
+</section>
+
+<section>
+<h2>3. Giao hang</h2>
+<label for="shipdate">Ngay giao mong muon</label>
+<input type="date" id="shipdate" name="shipdate" required>
+<label for="timeslot">Khung gio</label>
+<select id="timeslot" name="timeslot" required>
+<option value="">-- Chon --</option>
+<option>Sang 8-12h</option>
+<option>Chieu 14-18h</option>
+<option>Toi 18-21h</option>
+</select>
+<label for="days">So ngay chuan bi (range 1-7)</label>
+<input type="range" id="days" name="days" min="1" max="7" step="1" value="3" oninput="document.getElementById('daysOut').value=this.value">
+<output id="daysOut">3</output> ngay
+</section>
+
+<button class="btn-submit" type="submit" aria-label="Xac nhan dat hang">Xac nhan dat hang</button>
+</form>
+</body>
+</html>
