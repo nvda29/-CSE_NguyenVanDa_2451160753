@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator - PBT09</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Dang ky tai khoan</h1>
+    <p class="subtitle">Nguyen Van Da - 2451160753</p>
+    <form id="registerForm" novalidate>
+      <div class="field">
+        <label for="name">Ho ten</label>
+        <input id="name" name="name" type="text" autocomplete="name">
+        <span class="status" data-for="name"></span>
+        <small class="error" data-for="name"></small>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+        <span class="status" data-for="email"></span>
+        <small class="error" data-for="email"></small>
+      </div>
+      <div class="field">
+        <label for="password">Mat khau</label>
+        <input id="password" name="password" type="password" autocomplete="new-password">
+        <div class="strength-bar"><div id="strengthFill"></div></div>
+        <small id="strengthText">Do manh mat khau</small>
+      </div>
+      <div class="field">
+        <label for="confirmPassword">Xac nhan mat khau</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password">
+        <small class="error" data-for="confirmPassword"></small>
+      </div>
+      <div class="field">
+        <label for="phone">So dien thoai</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="12">
+        <small class="error" data-for="phone"></small>
+      </div>
+      <button type="submit" id="submitBtn" disabled>Dang ky</button>
+    </form>
+  </div>
+  <div id="successModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h2>Dang ky thanh cong!</h2>
+      <pre id="successInfo"></pre>
+      <button type="button" id="closeSuccess">Dong</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
