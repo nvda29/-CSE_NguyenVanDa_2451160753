@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard App - PBT09</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Keyboard Gallery</h1>
+      <p>Nguyen Van Da - 2451160753</p>
+      <p class="hint">Phim: ← → | 1-9 | Space | Esc | Ctrl+K</p>
+    </header>
+    <main>
+      <figure class="gallery">
+        <img id="galleryImage" src="" alt="Gallery image">
+        <figcaption id="galleryCaption"></figcaption>
+      </figure>
+      <div class="gallery-controls">
+        <button type="button" id="prevBtn" aria-label="Previous image">Previous</button>
+        <button type="button" id="playBtn" aria-label="Toggle slideshow">Play/Pause</button>
+        <button type="button" id="nextBtn" aria-label="Next image">Next</button>
+        <button type="button" id="openModalBtn" aria-label="Open image modal">Open modal</button>
+      </div>
+      <div id="thumbList" class="thumb-list" aria-label="Image thumbnails"></div>
+    </main>
+  </div>
+
+  <div id="imageModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Image modal">
+    <div class="modal-content">
+      <button type="button" id="closeModalBtn" aria-label="Close modal">Close</button>
+      <img id="modalImage" src="" alt="Modal image">
+    </div>
+  </div>
+
+  <div id="commandPalette" class="palette hidden" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-box">
+      <input id="commandInput" type="search" placeholder="Go to image, play, pause..." aria-label="Command search">
+      <ul id="commandResults"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
