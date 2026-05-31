@@ -1,0 +1,48 @@
+body {
+  font-family: Segoe UI, sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  width: min(420px, 100%);
+}
+
+.count {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#history {
+  list-style: none;
+}
+
+#history li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+}
