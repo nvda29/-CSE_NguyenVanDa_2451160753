@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalog - PBT09</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>Product Catalog</h1>
+      <p>Nguyen Van Da - 2451160753</p>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="darkToggle" aria-label="Toggle dark mode">Dark mode</button>
+      <div class="cart-wrap" aria-label="Cart">
+        <span class="cart-icon">Cart</span>
+        <span id="cartBadge" class="cart-badge hidden">0</span>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Tim san pham...">
+      <select id="sortSelect" aria-label="Sort products">
+        <option value="default">Sap xep</option>
+        <option value="price-asc">Gia tang</option>
+        <option value="price-desc">Gia giam</option>
+        <option value="name-asc">Ten A-Z</option>
+        <option value="rating-desc">Danh gia cao</option>
+      </select>
+    </div>
+    <div id="categoryFilters" class="category-filters"></div>
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button type="button" id="closeModal" class="close-btn" aria-label="Close modal">X</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
